@@ -1,0 +1,49 @@
+.gminy {
+  padding-top: 200px;
+  &__title {
+    margin-top: 25px;
+    font-weight: 500;
+    font-family: var(--font-bold);
+    font-size: 64px;
+    color: var(--dark);
+  }
+  .gminy-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 25px;
+    margin-top: 45px;
+    .gmina {
+      &__inner {
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--bg);
+      }
+      &__name {
+        margin-top: 25px;
+        text-align: center;
+        font-size: 45px;
+        color: var(--dark);
+        font-family: var(--font-bold);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .gminy {
+    padding-top: 100px;
+  }
+  .gminy__title {
+    font-size: 41px;
+  }
+  .gminy .gminy-wrapper .gmina__name {
+    font-size: 28px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .gminy__title {
+    font-size: 30px;
+  }
+}

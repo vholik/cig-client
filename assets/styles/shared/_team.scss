@@ -1,0 +1,82 @@
+.team {
+  margin-top: 100px;
+  &__title {
+    margin-top: 25px;
+    font-weight: 500;
+    font-family: var(--font-bold);
+    font-size: 64px;
+    color: var(--dark);
+  }
+  .team-slider {
+    margin-top: 25px;
+  }
+  .slide {
+    &__img {
+      height: 380px;
+      width: 280px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &__name {
+      font-size: 41px;
+      font-weight: 800;
+      color: var(--dark);
+      margin-top: 25px;
+      font-family: var(--font-bold);
+    }
+    &__position {
+      font-family: var(--font-bold);
+      font-weight: 700;
+      margin-top: 10px;
+      font-size: 25px;
+      color: var(--dark);
+    }
+  }
+  .slider-btns-wrapper {
+    display: flex;
+    gap: 25px;
+    .slider-btn {
+      cursor: pointer;
+      height: 75px;
+      width: 75px;
+      background-color: var(--blue);
+      border-radius: 50%;
+      border: none;
+    }
+  }
+  .bottom {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin-top: 25px;
+    .bar {
+      width: 100%;
+      height: 1px;
+      background-color: rgba(0, 0, 0, 0.3);
+      .team-bar-progress {
+        width: 25%;
+        transition: width 0.5s ease;
+        background-color: var(--blue);
+        height: 1px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .team .bottom .bar {
+    display: none;
+  }
+  .team__title {
+    font-size: 41px;
+  }
+}
+@media screen and (max-width: 650px) {
+  .team .slide__img {
+    width: 100%;
+  }
+}

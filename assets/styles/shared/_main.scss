@@ -1,0 +1,183 @@
+.unia-logo {
+  position: absolute;
+  top: 50px;
+  height: 72px;
+  right: 50px;
+  z-index: 0;
+}
+.main {
+  width: 100%;
+  background-image: url("../images/bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  // padding-bottom: 200px;
+  height: 100vh;
+  z-index: -2;
+  .logo {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+  }
+
+  .main-title {
+    padding-top: 100px;
+    font-family: "Inter", sans-serif;
+    font-weight: 800 !important;
+    text-align: center;
+    font-size: 72px;
+    &__span {
+      display: block;
+      font-weight: 400;
+    }
+  }
+  &__inner {
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    .contact-info {
+      a {
+        color: var(--dark);
+        font-size: 41px;
+        margin-top: 16px;
+        font-weight: 700;
+        display: flex;
+        gap: 10px;
+      }
+    }
+    .main-info-title {
+      font-size: 29px;
+      font-weight: 700;
+    }
+    .left {
+      .main-contact {
+        margin-top: 25px;
+        display: flex;
+        input {
+          max-width: 400px;
+          font-weight: var(--font);
+          font-size: 41px;
+          font-weight: 600;
+          padding: 15px 10px;
+          background: transparent;
+          font-family: var(--font);
+          outline: none;
+          border: none;
+          border: 1px solid var(--dark);
+        }
+        button {
+          font-weight: var(--font);
+          font-size: 41px;
+          font-weight: 600;
+          padding: 15px 10px;
+          background: var(--blue);
+          font-family: var(--font);
+          color: var(--light);
+          outline: none;
+          border: none;
+        }
+      }
+    }
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      a {
+        display: flex;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .main .main-title {
+    font-size: 50px;
+    margin-top: 50px;
+  }
+  .main__inner {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .main .logo {
+    left: 5%;
+    top: 25px;
+  }
+  .unia-logo {
+    top: 25px;
+    right: 5%;
+  }
+  .main__inner .main-info-title {
+    font-size: 32px;
+    text-align: center;
+  }
+  .main-contact {
+    justify-content: center;
+  }
+  .contact-info {
+    justify-content: center;
+    text-align: center;
+    a {
+      justify-content: center;
+    }
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .main__inner .contact-info a {
+    font-size: 30px;
+  }
+  .main__inner .left .main-contact input {
+    max-width: 300px;
+  }
+  .main .main-title {
+    font-size: 35px;
+  }
+  .main__inner {
+    margin-top: 50px;
+  }
+  .logo img {
+    width: 150px;
+    height: 72px;
+  }
+  .unia-logo {
+    height: 72px;
+
+    top: 25px;
+  }
+}
+
+@media screen and (max-height: 900px) {
+  .main {
+    height: fit-content;
+    padding-bottom: 200px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .main__inner .left .main-contact input {
+    font-size: 25px;
+    max-width: 250px;
+  }
+  .main__inner .left .main-contact button {
+    font-size: 25px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .main__inner .left .main-contact input {
+    font-size: 25px;
+    max-width: 200px;
+  }
+  .main .main-title {
+    font-size: 30px;
+  }
+  .main__inner .contact-info a {
+    font-size: 25px;
+  }
+}
+@media screen and (max-width: 350px) {
+  .main__inner .left .main-contact input {
+    font-size: 25px;
+    max-width: 150px;
+  }
+}
