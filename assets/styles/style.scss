@@ -146,11 +146,27 @@ a {
   }
 }
 
+.section-title {
+  margin-top: 25px;
+  font-weight: 500;
+  font-family: var(--font-bold);
+  font-size: 64px;
+  color: var(--black);
+}
+
 @media screen and (max-width: 1400px) {
   .container {
     max-width: 1000px;
   }
 }
+
+@media screen and (max-width: 900px) {
+  .section-title {
+    font-size: 41px;
+    text-transform: uppercase;
+  }
+}
+
 @media screen and (max-width: 1000px) {
   .container {
     max-width: 95%;

@@ -89,7 +89,7 @@ const catchErrors = (err) => {
 const formHandler = async (e) => {
   e.preventDefault();
   // let email = "bjaskolski@gmail.com";
-  let email = "1viktorholik@gmail.com";
+  let email = "kontakt@cig-podatek.pl";
   let fullName =
     document.querySelector(".fullname-input").value || "Nie podano telefonu";
   let phone =

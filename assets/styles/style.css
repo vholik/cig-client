@@ -1,10 +1,48 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
 .unia-logo {
-  position: absolute;
-  top: 50px;
+  position: fixed;
+  top: 25px;
   height: 72px;
   right: 50px;
-  z-index: 0;
+  z-index: 10;
+}
+
+.header-phone {
+  position: fixed;
+  left: calc(50% - 45px);
+  z-index: 10;
+  display: none;
+  margin-top: 40px;
+  align-items: center;
+  flex-direction: column;
+  font-size: 15px;
+  font-weight: 700;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+}
+.header-phone svg {
+  width: 35px;
+  height: 35px;
+}
+
+.white-navbar {
+  background-color: white;
+  position: fixed;
+  z-index: 5;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 110px;
+}
+.white-navbar ul {
+  padding-top: 5px;
+  display: flex;
+  list-style: none;
+  gap: 15px;
+  font-size: 8px;
+  justify-content: center;
 }
 
 .main {
@@ -13,16 +51,25 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  height: 100vh;
+  padding-top: 135px;
+  height: calc(100vh - 135px);
   z-index: -2;
 }
 .main .logo {
-  position: absolute;
-  top: 50px;
+  position: fixed;
+  top: 25px;
   left: 50px;
+  z-index: 10;
+}
+.main .phone a {
+  color: var(--dark);
+  font-size: 41px;
+  margin-top: 16px;
+  font-weight: 700;
+  display: flex;
+  gap: 10px;
 }
 .main .main-title {
-  padding-top: 100px;
   font-family: "Inter", sans-serif;
   font-weight: 800 !important;
   text-align: center;
@@ -41,10 +88,12 @@
 .main__inner .contact-info a {
   color: var(--dark);
   font-size: 41px;
-  margin-top: 16px;
   font-weight: 700;
   display: flex;
   gap: 10px;
+}
+.main__inner .contact-info a:nth-child(2) {
+  margin-top: 15px;
 }
 .main__inner .main-info-title {
   font-size: 29px;
@@ -57,9 +106,9 @@
 .main__inner .left .main-contact input {
   max-width: 400px;
   font-weight: var(--font);
-  font-size: 41px;
+  font-size: 29px;
   font-weight: 600;
-  padding: 15px 10px;
+  padding: 2px;
   background: transparent;
   font-family: var(--font);
   outline: none;
@@ -70,7 +119,7 @@
   font-weight: var(--font);
   font-size: 41px;
   font-weight: 600;
-  padding: 15px 10px;
+  padding: 2px 2px;
   background: var(--blue);
   font-family: var(--font);
   color: var(--light);
@@ -88,13 +137,15 @@
 @media screen and (max-width: 1400px) {
   .main .main-title {
     font-size: 50px;
-    margin-top: 50px;
   }
   .main__inner {
     flex-direction: column;
   }
 }
 @media screen and (max-width: 1000px) {
+  .header-phone {
+    display: flex;
+  }
   .main .logo {
     left: 5%;
     top: 25px;
@@ -103,12 +154,21 @@
     top: 25px;
     right: 5%;
   }
+  .main__inner .contact-info {
+    display: none;
+  }
   .main__inner .main-info-title {
-    font-size: 32px;
+    font-size: 24px;
     text-align: center;
+  }
+  .main__inner .left .main-contact input {
+    font-size: 24px;
   }
   .main-contact {
     justify-content: center;
+  }
+  .phone {
+    color: var(--light);
   }
   .contact-info {
     justify-content: center;
@@ -116,6 +176,14 @@
   }
   .contact-info a {
     justify-content: center;
+  }
+}
+@media screen and (max-height: 900px) {
+  .main {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    padding-bottom: 200px;
   }
 }
 @media screen and (max-width: 760px) {
@@ -129,7 +197,7 @@
     font-size: 35px;
   }
   .main__inner {
-    margin-top: 50px;
+    margin-top: 25px;
   }
   .logo img {
     width: 150px;
@@ -140,27 +208,22 @@
     top: 25px;
   }
 }
-@media screen and (max-height: 900px) {
-  .main {
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
-    height: fit-content;
-    padding-bottom: 200px;
-  }
-}
 @media screen and (max-width: 500px) {
+  .main .logo img {
+    width: 115px;
+  }
   .main__inner .left .main-contact input {
     font-size: 25px;
     max-width: 250px;
   }
   .main__inner .left .main-contact button {
-    font-size: 25px;
+    font-size: 24px;
   }
 }
 @media screen and (max-width: 400px) {
   .main__inner .left .main-contact input {
     font-size: 25px;
-    max-width: 200px;
+    max-width: 150px;
   }
   .main .main-title {
     font-size: 30px;
@@ -174,15 +237,22 @@
     font-size: 25px;
     max-width: 150px;
   }
+  .main .logo img {
+    width: 90px;
+  }
+  .unia-logo {
+    height: 50px;
+    top: 40px;
+  }
 }
 .about {
-  margin-top: 100px;
+  margin-top: 25px;
 }
 .about .trucks {
   width: 100%;
 }
 .about .info {
-  margin-top: 45px;
+  margin-bottom: 25px;
 }
 .about .info .info-title {
   font-family: var(--font-bold);
@@ -245,19 +315,23 @@
   font-size: 30px;
   gap: 25px;
   font-weight: 700;
+  text-transform: uppercase;
   font-family: var(--font-bold);
 }
 .about .blocks-wrapper .item .price {
   font-size: 45px;
 }
 .about .blocks-wrapper .item img {
-  width: 75px;
+  width: 40px;
 }
 .about .blocks-wrapper .right .item {
   font-size: 48px;
 }
 .about .blocks-wrapper .right .item img {
   width: 100px;
+}
+.about .section-title {
+  margin-bottom: 25px;
 }
 
 @media screen and (max-width: 1400px) {
@@ -268,7 +342,7 @@
     font-size: 28px;
   }
   .about .blocks-wrapper .right .item img {
-    width: 65px;
+    width: 40px;
   }
   .about .blocks-wrapper .item .price {
     font-size: 25px;
@@ -294,7 +368,7 @@
     margin-top: 15px;
   }
   .about .blocks-wrapper .right .item {
-    font-size: 30px;
+    font-size: 25px;
   }
 }
 @media screen and (max-width: 600px) {
@@ -305,21 +379,25 @@
     gap: 10px;
   }
   .about .blocks-wrapper .item img {
-    width: 40px;
+    width: 30px;
   }
   .about .info .info-title {
     font-size: 25px;
   }
   .about .info .info-desc {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 330px) {
+  .about .blocks-wrapper .right .item {
     font-size: 20px;
   }
 }
 .gallery {
-  padding-top: 50px;
+  padding-top: 25px;
   position: relative;
 }
 .gallery__title {
-  margin-top: 25px;
   font-weight: 500;
   font-family: var(--font-bold);
   font-size: 64px;
@@ -342,7 +420,7 @@
 }
 .gallery__inner .slide {
   width: 100%;
-  height: 560px;
+  height: 650px;
 }
 .gallery__inner .slide img {
   width: 100%;
@@ -389,9 +467,6 @@
     height: 250px;
   }
 }
-.gminy {
-  padding-top: 200px;
-}
 .gminy__title {
   margin-top: 25px;
   font-weight: 500;
@@ -406,14 +481,14 @@
   margin-top: 45px;
 }
 .gminy .gminy-wrapper .gmina__inner {
-  height: 300px;
+  height: 225px;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: var(--bg);
 }
 .gminy .gminy-wrapper .gmina__name {
-  margin-top: 25px;
+  margin-top: 0;
   text-align: center;
   font-size: 45px;
   color: var(--dark);
@@ -422,7 +497,7 @@
 
 @media screen and (max-width: 900px) {
   .gminy {
-    padding-top: 100px;
+    padding-top: 25px;
   }
   .gminy__title {
     font-size: 41px;
@@ -432,12 +507,12 @@
   }
 }
 @media screen and (max-width: 600px) {
-  .gminy__title {
-    font-size: 30px;
+  .gminy-wrapper {
+    margin-top: 0 !important;
   }
-}
-.team {
-  margin-top: 100px;
+  .gminy__title {
+    font-size: 41px;
+  }
 }
 .team__title {
   margin-top: 25px;
@@ -517,8 +592,7 @@
   }
 }
 .contact {
-  padding-top: 100px;
-  margin-top: 100px;
+  padding-top: 25px;
   display: flex;
   gap: 60px;
   color: var(--dark);
@@ -530,23 +604,24 @@
   width: 100%;
 }
 .contact__title {
-  margin-top: 25px;
   font-weight: 500;
   font-family: "Inter", sans-serif;
-  font-weight: 800 !important;
-  font-size: 64px;
+  font-weight: 600 !important;
+  font-size: 30px;
+  margin-top: 25px;
   color: var(--black);
 }
 .contact .contact-form {
   display: flex;
   flex-direction: column;
-  margin-top: 50px;
+  margin-top: 25px;
 }
 .contact .contact-form label {
   color: var(--dark);
-  font-size: 41px;
+  font-size: 30px;
   font-family: "Inter", sans-serif;
-  font-weight: 700;
+  font-weight: 600;
+  text-transform: uppercase;
   margin-bottom: 15px;
 }
 .contact .contact-form input {
@@ -554,7 +629,7 @@
   font-family: sans-serif;
   margin-bottom: 45px;
   font-size: 28px;
-  padding: 25px 15px;
+  padding: 5px 15px;
   color: var(--dark);
   outline: none;
   border: none;
@@ -563,7 +638,7 @@
 .contact .contact-form textarea {
   resize: none;
   outline: none;
-  padding: 25px 15px;
+  padding: 5px 15px;
   border: none;
   color: var(--dark);
   font-size: var(--font-sm);
@@ -572,7 +647,10 @@
   font-weight: 500;
 }
 .contact .contact-form .btn {
-  font-size: 35px;
+  font-size: 18px;
+  padding: 5px !important;
+  text-transform: uppercase;
+  text-align: center;
   background-color: var(--black);
   margin-top: 45px;
   color: var(--light);
@@ -585,6 +663,7 @@
 @media screen and (max-width: 1400px) {
   .contact {
     flex-direction: column;
+    gap: 25px;
   }
   .contact .left {
     display: none;
@@ -595,22 +674,19 @@
 }
 @media screen and (max-width: 900px) {
   .contact__title {
-    font-size: 41px;
+    font-size: 18px;
   }
   .contact {
     margin-top: 0;
   }
 }
 @media screen and (max-width: 500px) {
-  .contact__title {
-    font-size: 35px;
-  }
   .contact .contact-form label {
-    font-size: 30px;
+    font-size: 18px;
   }
 }
 .footer {
-  margin-top: 200px;
+  margin-top: 25px;
   background-color: #000;
   padding: 50px 0;
   color: var(--light);
@@ -808,9 +884,23 @@ a {
   font-weight: 500;
 }
 
+.section-title {
+  margin-top: 25px;
+  font-weight: 500;
+  font-family: var(--font-bold);
+  font-size: 64px;
+  color: var(--black);
+}
+
 @media screen and (max-width: 1400px) {
   .container {
     max-width: 1000px;
+  }
+}
+@media screen and (max-width: 900px) {
+  .section-title {
+    font-size: 41px;
+    text-transform: uppercase;
   }
 }
 @media screen and (max-width: 1000px) {
