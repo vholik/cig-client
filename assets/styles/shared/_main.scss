@@ -21,6 +21,7 @@
   font-weight: 700;
   min-width: fit-content;
 }
+
 .white-navbar {
   background-color: white;
   position: fixed;
@@ -34,7 +35,7 @@
     padding-top: 5px;
     display: flex;
     list-style: none;
-    gap: 15px;
+    gap: 10px;
     font-size: 8px;
     justify-content: center;
   }
@@ -184,6 +185,7 @@
     }
   }
 }
+
 @media screen and (max-height: 900px) {
   .main {
     height: fit-content;
